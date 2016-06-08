@@ -1,18 +1,14 @@
 Gem::Specification.new do |spec|
   spec.name          = 'onewheel-google'
-  spec.version       = '0.0.0'
+  spec.version       = '0.0.1'
   spec.authors       = ['Andrew Kreps']
   spec.email         = ['andrew.kreps@gmail.com']
   spec.description   = 'An interface of Google Custom Search Engine for searching.'
   spec.summary       = 'An abstracted way to access CSE.'
   spec.homepage      = 'https://github.com/onewheelskyward/onewheel-google'
   spec.license       = 'MIT'
-  spec.metadata      = { 'lita_plugin_type' => 'handler' }
 
-  spec.files         = `git ls-files`.split($/)
-  spec.executables   = spec.files.grep(%r{^bin/}) { |f| File.basename(f) }
-  spec.test_files    = spec.files.grep(%r{^(test|spec|features)/})
-  spec.require_paths = ['lib']
+  spec.files         = ['lib/onewheel-google.rb']
 
   spec.add_runtime_dependency 'rest-client', '~> 1.8'
   spec.add_runtime_dependency 'addressable', '~> 2.4'
