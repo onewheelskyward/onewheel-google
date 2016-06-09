@@ -1,6 +1,6 @@
 Gem::Specification.new do |spec|
   spec.name          = 'onewheel-google'
-  spec.version       = '0.0.2'
+  spec.version       = '0.0.4'
   spec.authors       = ['Andrew Kreps']
   spec.email         = ['andrew.kreps@gmail.com']
   spec.description   = 'An interface of Google Custom Search Engine for searching.'
