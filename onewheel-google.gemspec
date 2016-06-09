@@ -1,6 +1,6 @@
 Gem::Specification.new do |spec|
   spec.name          = 'onewheel-google'
-  spec.version       = '0.0.1'
+  spec.version       = '0.0.2'
   spec.authors       = ['Andrew Kreps']
   spec.email         = ['andrew.kreps@gmail.com']
   spec.description   = 'An interface of Google Custom Search Engine for searching.'
@@ -9,6 +9,8 @@ Gem::Specification.new do |spec|
   spec.license       = 'MIT'
 
   spec.files         = ['lib/onewheel-google.rb']
+
+  spec.required_ruby_version = '>= 2.1'
 
   spec.add_runtime_dependency 'rest-client', '~> 1.8'
   spec.add_runtime_dependency 'addressable', '~> 2.4'
