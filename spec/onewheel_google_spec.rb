@@ -11,6 +11,11 @@ describe OnewheelGoogle do
     expect(result['items'][0]['title']).to eq('Google')
   end
 
+  it 'does neat imagey things' do
+    result = OnewheelGoogle::search('google', 'cse', 'api', 'high', image = true)
+    expect(result['items'][0]['title']).to eq('Google')
+  end
+
   it 'does not do neat googly things' do
     result = OnewheelGoogle::search('', 'cse', 'nope', 'high')
     expect(result).to eq(nil)

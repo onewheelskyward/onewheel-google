@@ -2,7 +2,7 @@ require 'rest-client'
 require 'addressable'
 
 class OnewheelGoogle
-  def self.search(query, cse_id, api_key, safe_search = 'high')
+  def self.search(query, cse_id, api_key, safe_search, image = false)
     if query.empty?
       puts 'Query blank, cannot continue.'
       return
@@ -18,17 +18,33 @@ class OnewheelGoogle
       return
     end
 
+    if safe_search.empty?
+      puts 'safe_search blank, cannot continue.'
+      return
+    end
+
     uri = Addressable::URI.new
-    uri.query_values = {
-        q: query,
-        cx: cse_id,
-        # searchType: 'image',
-        num: 10,
-        key: api_key,
-        safe: safe_search}
+
+    if image
+      uri.query_values = {
+          q: query,
+          cx: cse_id,
+          num: 10,
+          key: api_key,
+          safe: safe_search,
+          searchType: 'image'
+      }
+    else
+      uri.query_values = {
+          q: query,
+          cx: cse_id,
+          num: 10,
+          key: api_key,
+          safe: safe_search,
+      }
+    end
 
     response = RestClient.get "https://www.googleapis.com/customsearch/v1?#{uri.query}"
     JSON.parse response
   end
-
 end
