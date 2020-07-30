@@ -44,6 +44,7 @@ class OnewheelGoogle
       }
     end
 
+    puts "https://www.googleapis.com/customsearch/v1?#{uri.query}"
     response = RestClient.get "https://www.googleapis.com/customsearch/v1?#{uri.query}"
     JSON.parse response
   end
